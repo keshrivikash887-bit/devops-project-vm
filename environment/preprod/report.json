@@ -1,0 +1,42 @@
+[
+ {
+  "RuleID": "github-pat",
+  "Description": "Uncovered a GitHub Personal Access Token, potentially leading to unauthorized repository access and sensitive content exposure.",
+  "StartLine": 5,
+  "EndLine": 5,
+  "StartColumn": 18,
+  "EndColumn": 57,
+  "Match": "ghp_123456789012345678901234567890123456",
+  "Secret": "ghp_123456789012345678901234567890123456",
+  "File": "secret.txt",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.6464393,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "secret.txt:github-pat:5"
+ },
+ {
+  "RuleID": "github-pat",
+  "Description": "Uncovered a GitHub Personal Access Token, potentially leading to unauthorized repository access and sensitive content exposure.",
+  "StartLine": 82,
+  "EndLine": 82,
+  "StartColumn": 24,
+  "EndColumn": 63,
+  "Match": "ghp_123456789012345678901234567890123456",
+  "Secret": "ghp_123456789012345678901234567890123456",
+  "File": "terraform.tfvars",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.6464393,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "terraform.tfvars:github-pat:82"
+ }
+]
