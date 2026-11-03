@@ -1,0 +1,76 @@
+# Example Terraform variables configuration
+# Copy this file to terraform.tfvars and customize the values:
+# cp terraform.tfvars.example terraform.tfvars
+
+resource_grp = {
+  rg1 = {
+    name     = "rg-devops-preprod"
+    location = "westus"
+  }
+}
+
+virtual_net = {
+  vnet1 = {
+    name                = "vnet-devops-preprod"
+    location            = "westus"
+    resource_group_name = "rg-devops-preprod"
+    address_space       = ["10.0.0.0/16"]
+  }
+}
+
+sub_nets = {
+  subnet1 = {
+    name                 = "snet-frontend"
+    resource_group_name  = "rg-devops-preprod"
+    virtual_network_name = "vnet-devops-preprod"
+    address_prefixes     = ["10.0.1.0/24"]
+  }
+  subnet2 = {
+    name                 = "snet-backend"
+    resource_group_name  = "rg-devops-preprod"
+    virtual_network_name = "vnet-devops-preprod"
+    address_prefixes     = ["10.0.2.0/24"]
+  }
+}
+
+public_ip = {
+  pip1 = {
+    name                = "pip-frontend"
+    resource_group_name = "rg-devops-preprod"
+    location            = "westus"
+    allocation_method   = "Static"
+  }
+  pip2 = {
+    name                = "pip-backend"
+    resource_group_name = "rg-devops-preprod"
+    location            = "westus"
+    allocation_method   = "Static"
+  }
+}
+
+virtual_mac = {
+  vm1 = {
+    nic_name            = "nic-frontend"
+    location            = "westus"
+    resource_group_name = "rg-devops-preprod"
+    subnet_name         = "snet-frontend"
+    vnet_name           = "vnet-devops-preprod"
+    pip_name            = "pip-frontend"
+    vm_name             = "vm-frontend"
+    vm_size             = "Standard_D2s_v3"
+    admin_username      = "azureuser"
+    admin_password      = "ChangeMeStrongPassword#123"
+  }
+  vm2 = {
+    nic_name            = "nic-backend"
+    location            = "westus"
+    resource_group_name = "rg-devops-preprod"
+    subnet_name         = "snet-backend"
+    vnet_name           = "vnet-devops-preprod"
+    pip_name            = "pip-backend"
+    vm_name             = "vm-backend"
+    vm_size             = "Standard_D2s_v3"
+    admin_username      = "azureuser"
+    admin_password      = "ChangeMeStrongPassword#123"
+  }
+}
